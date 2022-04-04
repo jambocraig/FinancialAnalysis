@@ -1,18 +1,18 @@
 package Finance;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class FinanceSet {
     // attributes
-    private Date date;
+    private LocalDate date;
     private double closing;
 
-    FinanceSet(Date d, double c){
+    FinanceSet(LocalDate d, double c){
         this.date = d;
         this.closing = c;
     }
 
-    public Date getDate(){
+    public LocalDate getDate(){
         return this.date;
     }
 
@@ -20,13 +20,22 @@ public class FinanceSet {
         return this.closing;
     }
 
-    public void setDate(Date d){
+    public void setDate(LocalDate d){
         this.date = d;
     }
 
     public void setClosing(double c){
         this.closing = c;
     }
+
+    public String toString(){
+        String str = this.date.getDayOfMonth() + "/" +
+                this.date.getMonthValue() + "/"
+                + this.date.getYear();
+
+        return str + " = " + this.closing;
+    }
+
 
 
 }
